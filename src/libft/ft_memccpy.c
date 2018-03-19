@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/20 11:02:35 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/21 12:40:31 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	size_t			i;
+	unsigned char	*p;
+	unsigned char	*p2;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	i = 0;
+	p = (unsigned char *)dst;
+	p2 = (unsigned char *)src;
+	while (i < n)
+	{
+		p[i] = p2[i];
+		if (p2[i] == (unsigned char)c)
+			return (&dst[i + 1]);
+		i++;
+	}
+	return (NULL);
+}

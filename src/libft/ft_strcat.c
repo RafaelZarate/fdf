@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/19 12:32:24 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/19 12:43:13 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
+{
+	int i;
+	int len;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	i = 0;
+	len = (int)ft_strlen(s1);
+	while (s2[i])
+	{
+		s1[i + len] = s2[i];
+		i++;
+	}
+	s1[i + len] = '\0';
+	return (s1);
+}

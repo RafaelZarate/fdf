@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/19 19:35:32 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/22 15:12:11 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+void	ft_strclr(char *s)
+{
+	int i;
+	int len;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	i = 0;
+	if (!s)
+		return ;
+	len = (int)ft_strlen(s);
+	while (i < len)
+	{
+		s[i] = '\0';
+		i++;
+	}
+}

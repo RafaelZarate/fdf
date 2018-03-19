@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/20 18:44:15 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/21 22:01:19 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+void	ft_striter(char *s, void (*f)(char *))
+{
+	int i;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	i = -1;
+	if (!s || !f)
+		return ;
+	while (s[++i])
+		f(&s[i]);
+}

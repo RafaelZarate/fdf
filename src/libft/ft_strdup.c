@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/20 18:28:40 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/21 12:42:30 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+char	*ft_strdup(const char *s1)
+{
+	char	*p;
+	size_t	i;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	i = 0;
+	p = ft_strnew(ft_strlen(s1));
+	if (!p)
+		return (NULL);
+	ft_strcpy(p, s1);
+	return (p);
+}

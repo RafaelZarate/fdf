@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/21 00:25:37 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/22 02:02:33 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
+{
+	char	*r;
+	size_t	i;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	i = -1;
+	r = ft_strnew(len);
+	if (!r || !s)
+		return (NULL);
+	while (++i < len)
+		r[i] = s[start++];
+	r[len] = '\0';
+	return (r);
+}

@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/20 12:11:45 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/22 01:45:53 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+void	*ft_memalloc(size_t size)
+{
+	void	*p;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	p = malloc(size);
+	if (!p)
+		return (NULL);
+	ft_bzero(p, size);
+	return (p);
+}

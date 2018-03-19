@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_listadd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/21 23:32:02 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/22 01:00:50 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
-
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+void	ft_lstadd(t_list **alst, t_list *new)
+{
+	if (*alst && alst && new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
+	else if ((!*alst || !alst) && new)
+		*alst = new;
+}

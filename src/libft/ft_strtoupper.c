@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/03/15 01:45:26 by rzarate           #+#    #+#             */
+/*   Updated: 2018/03/18 20:55:59 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+void	ft_strtoupper(char **s)
+{
+	size_t	i;
+	char	*tmp;
+	char	*str;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	str = *s;
+	tmp = ft_strnew(ft_strlen(str));
+	i = -1;
+	while (str[++i])
+	{
+		if (ft_islower(str[i]))
+			tmp[i] = str[i] - 32;
+		else
+			tmp[i] = str[i];
+	}
+	*s = tmp;
+}

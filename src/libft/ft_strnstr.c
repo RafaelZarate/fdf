@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.h                                              :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:25:33 by rzarate          ###   ########.fr       */
+/*   Created: 2018/02/19 14:55:43 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/22 13:51:01 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#ifndef FDF_H
-# define FDF_H
+char		*ft_strnstr(const char *h, const char *n, size_t len)
+{
+	size_t	i;
+	size_t	x;
+	size_t	y;
 
-#include "../src/libft/libft.h"
-
-
-
-#endif // !FDF.
+	i = 0;
+	if (!n[i])
+		return ((char *)h);
+	while ((h[i] != '\0') && (i < len))
+	{
+		y = i;
+		x = 0;
+		while ((h[y] == n[x]) && (y <= len))
+		{
+			y++;
+			x++;
+			if (n[x] == '\0')
+				return ((char *)&h[i]);
+		}
+		i++;
+	}
+	return (NULL);
+}
