@@ -6,11 +6,11 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 01:14:57 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/10 00:37:44 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/03/19 12:46:08 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static	void	give_next_line(char **c_buff, int fd, char **line, int i)
 {
