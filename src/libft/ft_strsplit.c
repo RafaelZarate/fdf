@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 12:51:39 by rzarate           #+#    #+#             */
-/*   Updated: 2018/04/02 10:33:27 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/10 22:13:41 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char			**ft_strsplit(char *s, char c)
 
 	i = -1;
 	y = 0;
-	r = (char **)malloc(sizeof(char *) * (ft_countwords(s, c) + 1));
+	r = (char **)ft_memalloc(sizeof(char *) * (ft_countwords(s, c) + 1));
 	if (!r)
 		return (NULL);
 	while (s[++i])
