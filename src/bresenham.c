@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2d_strdel.c                                     :+:      :+:    :+:   */
+/*   bresenham.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/01 06:25:18 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/10 23:06:03 by rzarate          ###   ########.fr       */
+/*   Created: 2018/05/11 03:31:10 by rzarate           #+#    #+#             */
+/*   Updated: 2018/05/11 03:37:06 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fdf.h"
 
-void	ft_2d_strdel(char ***arr, int size)
+void	draw_line(t_point a, t_point b)
 {
-	int i;
-
-	i = -1;
-	while (++i < size)
-		ft_strdel(arr[i]);
-	free(arr);
+	
 }

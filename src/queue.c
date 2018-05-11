@@ -6,13 +6,13 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/10 17:41:26 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/10 18:48:07 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/11 03:14:33 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-t_queue		*init(void)
+t_queue		*init_queue(void)
 {
 	t_queue	*new_queue;
 
@@ -60,4 +60,11 @@ char		*dequeue(t_queue *queue)
 		free(tmp_node);
 		return (tmp_s);
 	}
+}
+
+char			*peek_queue(t_queue *queue)
+{
+	if (!queue || !queue->first)
+		exit_error();
+	return (queue->first->s);
 }

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2d_strdel.c                                     :+:      :+:    :+:   */
+/*   image.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/01 06:25:18 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/10 23:06:03 by rzarate          ###   ########.fr       */
+/*   Created: 2018/05/11 03:50:32 by rzarate           #+#    #+#             */
+/*   Updated: 2018/05/11 05:30:32 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fdf.h"
 
-void	ft_2d_strdel(char ***arr, int size)
+void	generate_image(t_fdf *fdf)
 {
-	int i;
-
-	i = -1;
-	while (++i < size)
-		ft_strdel(arr[i]);
-	free(arr);
+	
+	fdf->mlx->returned_img = (int *)mlx_get_data_addr(fdf->mlx->img, &BPP, &SL, &ENDIAN);
+	int x = 20;
+	int y = 20;
+	while (++x < 100)
+	{
+		while (++y < 100)
+			fdf->mlx->returned_img[x + (y * SL / 4)] = 0x123456;
+		y = 20;
+	}
 }
