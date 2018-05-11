@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countwords.c                                    :+:      :+:    :+:   */
+/*   ft_countnums.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 13:07:30 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/22 04:36:13 by rzarate          ###   ########.fr       */
+/*   Created: 2018/03/22 04:36:02 by rzarate           #+#    #+#             */
+/*   Updated: 2018/03/22 05:48:42 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countwords(char *s, char c)
+int	ft_countnums(char *s)
 {
 	int i;
 	int r;
 
-	r = 1;
-	i = 0;
+	r = 0;
+	i = -1;
 	if (!s)
 		return (0);
-	while (s[i])
+	while (s[++i])
 	{
-		if (s[i] == c)
+		if (ft_isdigit(s[i]))
 		{
 			r++;
-			while (s[i] && s[i] == c)
+			while (s[i] && ft_isdigit(s[i]))
 				i++;
 		}
-		i++;
 	}
 	return (r);
 }

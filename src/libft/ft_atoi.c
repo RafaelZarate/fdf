@@ -6,17 +6,17 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 18:37:23 by rzarate           #+#    #+#             */
-/*   Updated: 2018/02/21 12:45:31 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/03/22 09:24:00 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+intmax_t	ft_atoi(const char *str)
 {
-	int i;
-	int n;
-	int neg;
+	int			i;
+	intmax_t	n;
+	int			neg;
 
 	i = 0;
 	n = 0;

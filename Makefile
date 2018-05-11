@@ -20,7 +20,7 @@ all: $(NAME)
 
 $(NAME):
 	@$(LIBM)
-	@$(CC) $(CFLAGS) -I. -o $(NAME) $(CFILES)
+	@$(CC) $(CFLAGS) -I includes/ -o $(NAME) $(CFILES)
 	@echo "FDF: Successfull compilation"
 	
 

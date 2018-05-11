@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 10:26:57 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/19 12:22:59 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/04/02 10:33:40 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
-# include <fcntl.h>
 
-# define BUFF_SIZE 100
+# define BUFF_SIZE 1
 
 typedef struct		s_list
 {
@@ -28,6 +27,7 @@ typedef struct		s_list
 }					t_list;
 
 int					get_next_line(const int fd, char **line);
+void				ft_2d_strdel(char **arr, int size);
 
 size_t				ft_strlen(const char *s);
 size_t				ft_strlen_wc(wchar_t *s);
@@ -43,7 +43,7 @@ char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *h, const char *n, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					ft_atoi(const char *str);
+intmax_t			ft_atoi(const char *str);
 int					ft_isspace(char c);
 int					ft_islower(int c);
 int					ft_isupper(int c);
@@ -76,10 +76,12 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strjoinf(char **s1, char **s2, int i);
 char				*ft_strtrim(char const *s);
 char				*ft_strtrimc(char const *s, char c);
 int					ft_countwords(char *s, char c);
-char				**ft_strsplit(char const *s, char c);
+int					ft_countnums(char *s);
+char				**ft_strsplit(char *s, char c);
 int					n_digits(intmax_t n);
 int					n_ldigits(long n);
 char				*ft_itoa(intmax_t n);

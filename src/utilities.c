@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countwords.c                                    :+:      :+:    :+:   */
+/*   utilities.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 13:07:30 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/22 04:36:13 by rzarate          ###   ########.fr       */
+/*   Created: 2018/05/10 14:59:03 by rzarate           #+#    #+#             */
+/*   Updated: 2018/05/10 18:36:00 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fdf.h"
 
-int	ft_countwords(char *s, char c)
+t_fdf	*initialize_fdf(t_queue	*input)
 {
-	int i;
-	int r;
+	t_fdf	*new_fdf;
+	int		i;
+	
+	i = -1;
+	if (!(new_fdf = (t_fdf *)ft_memalloc(sizeof(t_fdf))))
+		exit_error();
+	if (!(new_fdf->map = (t_map *)ft_memalloc(sizeof(t_map))))
+		exit_error();
+	return(new_fdf);
+}
 
-	r = 1;
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-	{
-		if (s[i] == c)
-		{
-			r++;
-			while (s[i] && s[i] == c)
-				i++;
-		}
-		i++;
-	}
-	return (r);
+void	exit_error(void)
+{
+	write(1,ERROR_MESSAGE, 18);
+	exit(EXIT_FAILURE);
 }
