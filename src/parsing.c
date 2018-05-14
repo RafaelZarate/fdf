@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/10 14:45:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/11 02:50:02 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/11 05:53:20 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,6 @@ t_map	*generate_map(t_queue *input)
 	map->min_z = INT_MAX;
 	map->max_z = INT_MIN;
 	create_grid(input, map);
-	write(1, "test1\n", 6);
 	map->depth = ABS(map->max_z - map->min_z);
 	return (map);
 }

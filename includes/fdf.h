@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/11 05:32:40 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/14 07:52:47 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@
 
 # define ABS(N) ((N<0)?(-N):(N))
 # define ERROR_MESSAGE "An error ocurred."
-// # define WIN_WIDTH 2560
+// Small screen
 # define WIN_WIDTH 1280
 # define WIN_HEIGHT 720
+// Full screen
+// # define WIN_WIDTH 2560
 // # define WIN_HEIGHT	1440
 # define WIN_NAME "My fdf"
 
@@ -40,10 +42,28 @@
 **	STRUCTURES
 */
 
+typedef	struct			s_line
+{
+	int32_t				x1;
+	int32_t				y1;
+	int32_t				x2;
+	int32_t				y2;
+	uint32_t			dx;
+	uint32_t			dy;
+	uint32_t			da;
+	int32_t				j;
+	int32_t				i1;
+	int32_t				i2;
+	int32_t				e;
+	int32_t				c1;
+	int32_t				c2;
+	int32_t				gradient;
+}						t_line;
+
 typedef	struct			s_point
 {
-	int32_t				x;
-	int32_t				y;
+	size_t				x;
+	size_t				y;
 	int32_t				z;
 	int32_t				w;
 	int32_t				c;
@@ -98,6 +118,7 @@ typedef struct			s_fdf
 {
 	t_map				*map;
 	t_mlx				*mlx;
+	t_line				*bres;
 }						t_fdf;
 
 /*

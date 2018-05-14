@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 11:58:16 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/11 05:31:55 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/14 07:20:43 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,10 @@ int	main(int ac, char **av)
 	fdf = init_fdf();
 	input = parser(av[1]);
 	fdf->map = generate_map(input);
-	
-	
+	print_grid(fdf->map);
 	generate_image(fdf);
 	mlx_put_image_to_window(fdf->mlx->ptr, fdf->mlx->win, fdf->mlx->img, 0, 0);
-
 	mlx_hook(fdf->mlx->win, 17, 0, general_exit, fdf);
 	mlx_loop(fdf->mlx->ptr);
-	// print_grid(fdf->map);
 	return (EXIT_SUCCESS);
 }

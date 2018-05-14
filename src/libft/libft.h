@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 10:26:57 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/10 23:06:25 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/11 05:50:53 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 
-# define BUFF_SIZE 1
+# define BUFF_SIZE 100
 
 typedef struct		s_list
 {
