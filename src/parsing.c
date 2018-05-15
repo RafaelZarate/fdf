@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/10 14:45:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/11 05:53:20 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/14 20:56:35 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	get_points(char *line, t_map *map, size_t n)
 	while (numbers[++j])
 	{
 		num = ft_atoi(numbers[j]);
-		map->grid[CURRENT_INDEX].x = j;
-		map->grid[CURRENT_INDEX].y = n;
+		map->grid[CURRENT_INDEX].x = j * SCALE_WIDTH;
+		map->grid[CURRENT_INDEX].y = n * SCALE_HEIGHT;
 		map->grid[CURRENT_INDEX].z = num;
 		(num < map->min_z) ? map->min_z = num : 0;
 		(num > map->max_z) ? map->max_z = num : 0;
@@ -81,11 +81,11 @@ void	create_grid(t_queue *input, t_map *map)
 	char	*tmp;
 	size_t	i;
 	
-	i = 0;
+	i = -1;
 	map->width = get_width(peek_queue(input));
 	map->points = map->width * map->height;
 	map->grid = (t_point *)ft_memalloc(sizeof(t_point) * map->points);
-	while (i++ < map->height)
+	while (++i < map->height)
 	{
 		tmp = dequeue(input);
 		get_points(tmp, map, i);

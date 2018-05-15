@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/19 10:31:22 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/14 07:52:47 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/14 21:31:42 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@
 // # define WIN_WIDTH 2560
 // # define WIN_HEIGHT	1440
 # define WIN_NAME "My fdf"
+# define FILE_NAME "logs.txt"
+
+# define SCALE_WIDTH 40
+# define SCALE_HEIGHT 20
 
 # define BPP fdf->mlx->img_data->bits_per_pixel
 # define SL fdf->mlx->img_data->size_line
@@ -44,16 +48,17 @@
 
 typedef	struct			s_line
 {
-	int32_t				x1;
-	int32_t				y1;
-	int32_t				x2;
-	int32_t				y2;
+	size_t				x1;
+	size_t				y1;
+	size_t				x2;
+	size_t				y2;
 	uint32_t			dx;
 	uint32_t			dy;
 	uint32_t			da;
-	int32_t				j;
-	int32_t				i1;
-	int32_t				i2;
+	size_t				j;
+	size_t				i;
+	size_t				i1;
+	size_t				i2;
 	int32_t				e;
 	int32_t				c1;
 	int32_t				c2;
@@ -82,7 +87,7 @@ typedef struct			s_queue
 	int					count;
 }						t_queue;
 
-typedef struct	s_map
+typedef struct			s_map
 {
 	t_point				*grid;
 	size_t				width;
@@ -119,6 +124,7 @@ typedef struct			s_fdf
 	t_map				*map;
 	t_mlx				*mlx;
 	t_line				*bres;
+	FILE				*fp;
 }						t_fdf;
 
 /*
@@ -134,7 +140,7 @@ int						general_exit(t_fdf *fdf);
 t_fdf					*init_fdf(void);
 void					validate_input(char *s);
 void					exit_error(void);
-void					print_grid(t_map *map);
+void					print_grid(t_fdf *fdf);
 
 
 t_queue					*init_queue(void);

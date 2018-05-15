@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/10 14:59:03 by rzarate           #+#    #+#             */
-/*   Updated: 2018/05/14 07:20:18 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/05/14 17:22:14 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,17 @@ void	exit_error(void)
 	exit(EXIT_FAILURE);
 }
 
-void	print_grid(t_map *map)
+void	print_grid(t_fdf *fdf)
 {
 	size_t	x;
 
 	x = -1;
-	printf("Points: %zu, Height: %zu, Width: %zu, Depth: %zu, Min_z: %d, Max_z: %d", map->points, map->height, map->width, map->depth, map->min_z, map->max_z);
-	// while (++x < map->points)
-	// {
-	// 	if (x % map->width == 0)
-	// 		printf("\n");
-	// 	printf("{y: %zu, x: %zu, z: %d, w: %d, c: %d}", map->grid[x].y, map->grid[x].x, map->grid[x].z, map->grid[x].w, map->grid[x].c);
-	// }
-	printf("\n");
+	fprintf(fdf->fp, "Points: %zu, Height: %zu, Width: %zu, Depth: %zu, Min_z: %d, Max_z: %d", fdf->map->points, fdf->map->height, fdf->map->width, fdf->map->depth, fdf->map->min_z, fdf->map->max_z);
+	while (++x < fdf->map->points)
+	{
+		if (x % fdf->map->width == 0)
+			fprintf(fdf->fp, "\n");
+		fprintf(fdf->fp, "{y: %zu, x: %zu, z: %d, w: %d, c: %d} ", fdf->map->grid[x].y, fdf->map->grid[x].x, fdf->map->grid[x].z, fdf->map->grid[x].w, fdf->map->grid[x].c);
+	}
+	fprintf(fdf->fp, "\n\n\n\n");
 }
